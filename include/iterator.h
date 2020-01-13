@@ -43,11 +43,17 @@ class IteratorFactory {
 
   Iterator begin();
   Iterator end();
-  ConstIterator cbegin();
-  ConstIterator cend();
+  ConstIterator const begin() const;
+  ConstIterator const end() const;
+
+  ConstIterator const cbegin() const;
+  ConstIterator const cend() const;
 
   Iterator rbegin();
   Iterator rend();
+
+  ConstIterator const rbegin() const;
+  ConstIterator const rend() const;
   ConstIterator crbegin();
   ConstIterator crend();
  private:

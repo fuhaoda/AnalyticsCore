@@ -12,10 +12,10 @@ aads::data::Iterator aads::data::IteratorFactory::end() {
   return Iterator(end_, stride_);
 }
 
-aads::data::ConstIterator aads::data::IteratorFactory::cbegin() {
+aads::data::ConstIterator const aads::data::IteratorFactory::cbegin() const {
   return ConstIterator(cbegin_, stride_);
 }
-aads::data::ConstIterator aads::data::IteratorFactory::cend() {
+aads::data::ConstIterator const aads::data::IteratorFactory::cend() const {
   return ConstIterator(cend_, stride_);
 }
 aads::data::Iterator aads::data::IteratorFactory::rbegin() {
@@ -31,6 +31,12 @@ aads::data::ConstIterator aads::data::IteratorFactory::crbegin() {
 }
 aads::data::ConstIterator aads::data::IteratorFactory::crend() {
   return aads::data::ConstIterator(cbegin_-stride_, -stride_);
+}
+aads::data::ConstIterator const aads::data::IteratorFactory::begin() const {
+  return ConstIterator(cbegin_, stride_);
+}
+aads::data::ConstIterator const aads::data::IteratorFactory::end() const {
+  return ConstIterator(cend_, stride_);
 }
 
 bool aads::data::Iterator::operator==(const aads::data::Iterator &rhs) const {

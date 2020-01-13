@@ -32,11 +32,11 @@ class Matrix {
 
   // return a column iterator
   aads::data::IteratorFactory  col(size_t colID);
-  aads::data::IteratorFactory  col(size_t colID) const;
+  aads::data::IteratorFactory const  col(size_t colID) const;
 
   // return a row iterator
   aads::data::IteratorFactory row(size_t rowID);
-  aads::data::IteratorFactory row(size_t rowID) const;
+  aads::data::IteratorFactory const row(size_t rowID) const;
   // return an item in a matrix
   real &operator()(size_t row, size_t col);
   const real &operator()(size_t row, size_t col) const;

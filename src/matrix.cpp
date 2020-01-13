@@ -29,7 +29,7 @@ aads::data::IteratorFactory aads::data::Matrix::row(size_t rowID) {
   return IteratorFactory(rowMajorData_.data() + rowID * nCol_, rowMajorData_.data() + (rowID + 1) * nCol_, 1);
 }
 
-aads::data::IteratorFactory aads::data::Matrix::row(size_t rowID) const {
+aads::data::IteratorFactory const aads::data::Matrix::row(size_t rowID) const {
   utils::assertTrue(rowID < nRow_, "Row index is out of bound!");
   return IteratorFactory(rowMajorData_.data() + rowID * nCol_, rowMajorData_.data() + (rowID + 1) * nCol_, 1);
 }
@@ -44,7 +44,7 @@ aads::data::IteratorFactory aads::data::Matrix::col(size_t colID) {
   return aads::data::IteratorFactory(rowMajorData_.data() + colID, rowMajorData_.data() + colID + nRow_ * nCol_, nCol_);
 }
 
-aads::data::IteratorFactory aads::data::Matrix::col(size_t colID) const {
+aads::data::IteratorFactory const aads::data::Matrix::col(size_t colID) const {
   utils::assertTrue(colID < nCol_, "Column index is out of bound");
   return aads::data::IteratorFactory(rowMajorData_.data() + colID,
                                      rowMajorData_.data() + colID + nRow_ * nCol_,

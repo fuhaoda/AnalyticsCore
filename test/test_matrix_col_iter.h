@@ -28,8 +28,8 @@ class TestMatrixColIter : public aads::utils::Test {
     data::real v=1;
     bool testResult = true;
 
-    for (auto it = myConstMatrix.col(0).cbegin(); it!= myConstMatrix.col(0).cend(); ++it) {
-      testResult = testResult && (*it==v);
+    for (auto const & it : myConstMatrix.col(0)) {
+      testResult = testResult && (it==v);
       v+=5;
     }
 
